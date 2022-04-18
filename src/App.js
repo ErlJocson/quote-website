@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 function App() {
+  const [quote, setQuote] = useState("");
+  const [author, setAuthor] = useState("");
+
+  const getDataInAPI = async () => {
+    const response = await axios.get(
+      "https://programming-quotes-api.herokuapp.com/Quotes/random"
+    );
+    setAuthor(response.data.author);
+    setQuote(response.data.en);
+    return JSON.stringify(response.data);
+  };
+
+  useEffect(() => {
+    getDataInAPI();
+  }, []);
+
+  console.log(quote);
+  console.log(author);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div className="main">
+        <h1>Random Qoute</h1>
+        <div className="paragraph">{quote}</div>
+        <div className="author">- {author}</div>
+      </div>
     </div>
   );
 }
