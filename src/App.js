@@ -19,8 +19,7 @@ function App() {
     getDataInAPI();
   }, []);
 
-  console.log(quote);
-  console.log(author);
+  console.log("https://github.com/skolakoda/programming-quotes-api");
 
   return (
     <div className="container">

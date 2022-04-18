@@ -34,3 +34,13 @@ body {
   text-align: center;
   font-size: 22px;
 }
+
+@media screen and (max-width: 720px) {
+  .paragraph {
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+}
