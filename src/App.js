@@ -19,8 +19,6 @@ function App() {
     getDataInAPI();
   }, []);
 
-  console.log("https://github.com/skolakoda/programming-quotes-api");
-
   return (
     <div className="container">
       <div className="main">
