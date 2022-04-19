@@ -25,6 +25,9 @@ function App() {
         <h1>Random Qoute</h1>
         <div className="paragraph">{quote}</div>
         <div className="author">- {author}</div>
+        <button className="btn" onClick={getDataInAPI}>
+          Another quote
+        </button>
       </div>
     </div>
   );
